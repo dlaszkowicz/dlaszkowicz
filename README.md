@@ -1,1 +1,1 @@
-Mój aktualny ranking na TryHackMe: THM_RANK_PLACEHOLDER
+(https://tryhackme.com/p/0xdany)
