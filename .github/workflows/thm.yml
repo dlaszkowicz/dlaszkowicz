@@ -1,0 +1,23 @@
+name: Update THM Stats
+on:
+  schedule:
+    - cron: '0 * * * *' # Aktualizacja co godzinę
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Get THM Stats
+        run: |
+          # Ten skrypt wyciąga dane prosto z HTML Twojego profilu
+          RANK=$(curl -s https://tryhackme.com/p/0xdany | grep -oP 'Ranked: \K[0-9]+' || echo "N/A")
+          sed -i "s/THM_RANK_PLACEHOLDER/$RANK/g" README.md
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Update THM Stats" || exit 0
+          git push
