@@ -1,2 +1,1 @@
-### My TryHackMe Stats 🚀
-[![TryHackMe Stats Card](https://tryhackme-stats.vercel.app/api/stats/0xdany)](https://tryhackme.com/p/0xdany)
+Mój aktualny ranking na TryHackMe: THM_RANK_PLACEHOLDER
